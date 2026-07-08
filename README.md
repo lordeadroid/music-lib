@@ -44,7 +44,7 @@ Add your API keys to the `.env` file:
 
 ```env
 # Required for model usage
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
+GOOGLE_API_KEY=your_anthropic_api_key_here
 
 # Optional: For evaluation and tracing
 LANGSMITH_API_KEY=your_langsmith_api_key_here
@@ -56,6 +56,8 @@ LANGSMITH_ENDPOINT=https://eu.api.smith.langchain.com
 ```
 
 ### Running Jupyter Notebooks
+
+> Note: This is optional and can be skipped if running Jupyter in editor.
 
 If you don't have Jupyter installed, you can install it using pip or pipx:
 
