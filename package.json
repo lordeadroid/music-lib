@@ -15,7 +15,6 @@
     "langchain-typescript"
   ],
   "license": "MIT",
-  "packageManager": "pnpm@10.28.1",
   "dependencies": {
     "@langchain/classic": "^1.0.27",
     "@langchain/community": "^1.1.27",
@@ -33,26 +32,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@langchain/langgraph-cli": "^1.1.17"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3",
-      "sqlite3"
-    ],
-    "overrides": {
-      "fast-xml-parser": ">=4.5.4",
-      "tar": ">=7.5.10",
-      "hono": ">=4.12.4",
-      "@hono/node-server": ">=1.19.10",
-      "express-rate-limit": ">=8.2.2",
-      "langsmith": ">=0.4.6",
-      "@tootallnate/once": ">=3.0.1",
-      "path-to-regexp": ">=8.4.0",
-      "brace-expansion@>=1.0.0 <2.0.0": ">=1.1.13 <2.0.0",
-      "brace-expansion@>=4.0.0": ">=5.0.5",
-      "ibm-cloud-sdk-core": ">=5.4.9",
-      "file-type": ">=21.3.1"
-    }
+    "@langchain/langgraph-cli": "^1.1.17",
+    "@types/node": "^26.1.0"
   }
 }
