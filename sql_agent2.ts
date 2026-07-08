@@ -1,7 +1,7 @@
 // Sql agent
 import "dotenv/config";
 import { createAgent, tool } from "langchain";
-import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { ChatGoogle } from "@langchain/google";
 import { DataSource } from "typeorm";
 import { SqlDatabase } from "@langchain/classic/sql_db";
 import { MemorySaver } from "@langchain/langgraph";
@@ -18,7 +18,7 @@ if (key === undefined) {
  * - Uses your Anthropic key from .env if needed
  */
 // const llm = new ChatOpenAI({ model: "gpt-5" });
-const llm = new ChatGoogleGenerativeAI({ model: "gemini-2.5-flash" });
+const llm = new ChatGoogle({ model: "gemini-3.5-flash" });
 
 /**
  * Database
@@ -29,13 +29,14 @@ const datasource = new DataSource({
   type: "sqlite",
   database: "./Chinook.db",
 });
-const db = await SqlDatabase.fromDataSourceParams({ appDataSource: datasource });
+const db = await SqlDatabase.fromDataSourceParams({
+  appDataSource: datasource,
+});
 
 /**
  * Schema (included in the prompt to ground the model)
  */
 const SCHEMA = await db.getTableInfo();
-
 
 /**
  * Tool (function-first signature; matches LangChain umbrella API)
@@ -55,7 +56,6 @@ export const execute_sql = tool(
     schema: z.object({ query: z.string() }),
   }
 );
-
 
 /**
  * System prompt (includes schema + rules)
@@ -90,4 +90,3 @@ const agent = createAgent({
 });
 
 export default agent;
-
