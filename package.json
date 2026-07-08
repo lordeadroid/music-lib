@@ -6,7 +6,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpx @langchain/langgraph-cli dev"
+    "dev": "pnpx @langchain/langgraph-cli dev",
+    "studio": "langgraphjs dev"
   },
   "keywords": [
     "langchain",
